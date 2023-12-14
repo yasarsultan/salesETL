@@ -1,12 +1,13 @@
 import re
 import pandas as pd 
 import analysis
+from db_tasks import *
 
 def split_users(row):
     splitted_text = re.split(',(?!,| |Tcr|Soopy)', row)
     return splitted_text
 
-
+## Extracting data from csv file
 dataframe = pd.read_csv('data/amazon.csv')
 # print(dataframe.head())
 
@@ -47,3 +48,24 @@ users = pd.DataFrame({
 })
 ## Saving users dataframe as a csv file
 users.to_csv('data/users.csv', index=False)
+
+
+
+## Establishing connection with database
+connector = create_connection()
+# create_database(connector)
+
+## Loading products dataframe into products table
+create_table(connector, "products", product_structure)
+insert_data(connector, 'products', products)
+print("Loaded products data successfully.")
+
+## Loading reviews dataframe into reviews table
+create_table(connector, 'reviews', review_structure)
+print("Loaded reviews data successfully.")
+
+## Loading users dataframe into users table
+create_table(connector, 'users', user_structure)
+print("Loaded users data successfully.")
+
+close_connection(connector)
