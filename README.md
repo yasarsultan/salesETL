@@ -8,13 +8,15 @@
 
 ## 🚀 Quick Start
 
-### Download source data file [amazon.csv] (https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset) and required packages to run the files.
+### Download source data file [amazon.csv](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset) and required packages to run the files.
 
-```pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
 ```
-### Adujust connection parameters in [db_tasks.py] (https://github.com/yasarsultan/salesETL/blob/main/db_tasks.py) file.
+### Adujust connection parameters in [db_tasks.py](https://github.com/yasarsultan/salesETL/blob/main/db_tasks.py) file.
 
-### Run the [etl.py] (https://github.com/yasarsultan/salesETL/blob/main/etl.py) file.
+### Run the [etl.py](https://github.com/yasarsultan/salesETL/blob/main/etl.py) file.
 
-```python3 etl.py
+```bash
+python3 etl.py
 ```
